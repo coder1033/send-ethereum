@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Send Ethereum</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="container mt-3">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#transferEth"
+    >
+      Send Ethereum
+    </button>
+    <div
+      id="alert-info"
+      class="alert alert-success d-none mt-3"
+      role="alert"
+    ></div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="transferEth"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+      data-backdrop="static"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered mx-auto p-3"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h3 class="modal-title" id="exampleModalLongTitle">
+                Send Ethereum
+              </h3>
+              <div class="text-muted">
+                Balance: <span id="eth-balance"></span> ETH
+              </div>
+            </div>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="close-modal"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <h5>Address:</h5>
+              <span id="eth-address"></span>
+              <div class="d-flex justify-content-center">
+                <img id="qr-code" alt="QR code" />
+              </div>
+            </div>
+            <div class="container mt-3">
+              <form id="send-eth-form">
+                <div class="form-group">
+                  <label for="send-to" class="col-form-label">Send to:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="send-to"
+                    placeholder="Enter receiver address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="eth-amount" class="col-form-label">Amount:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eth-amount"
+                    placeholder="Enter ETH amount"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+                <span id="transaction-failed" class="text-danger"></span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

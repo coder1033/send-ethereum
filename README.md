@@ -6,6 +6,16 @@
 - Ganache is used for development of ethereum blockchain.
 - MetaMask extension is used to interact with dapp in the browser.
 
+## Setup instructions
+- Install [Ganache](https://github.com/trufflesuite/ganache/releases)
+- Install and configure [MetaMask](https://www.trufflesuite.com/tutorial#installing-and-configuring-metamask)
+- Install Global dependency run - `npm install -g truffle`
+- Inside the project directory - 
+  - Install Local dependencies run `npm i`
+  - Compiling contracts run `truffle compile`
+  - Migrating contracts to the blockchain run `truffle migrate`
+  - Start development server run `npm run dev`
+
 ## Screenshots
 - Home page
 ![Screenshot (50)](https://user-images.githubusercontent.com/40430894/117573551-2c809600-b0f6-11eb-94d1-40aef26bade2.png)
